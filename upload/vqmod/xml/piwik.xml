@@ -24,26 +24,6 @@
 			]]></add>
 		</operation>
 	</file>
-	<file path="catalog/controller/extension/quickcheckout/" name="cart.php">
-		<operation>
-			<search position="after"><![CDATA[$this->cart->remove(]]></search>
-			<add><![CDATA[
-			// BOF - Matomo Opencart mod
-			$this->load->model('tool/piwik');
-			$this->model_tool_piwik->trackEcommerceCartUpdate();
-			// EOF - Matomo Opencart mod
-			]]></add>
-		</operation>
-		<operation>
-			<search position="after"><![CDATA[$this->cart->update(]]></search>
-			<add><![CDATA[
-			// BOF - Matomo Opencart mod
-			$this->load->model('tool/piwik');
-			$this->model_tool_piwik->trackEcommerceCartUpdate();
-			// EOF - Matomo Opencart mod
-			]]></add>
-		</operation>
-	</file>
 	<file path="catalog/controller/checkout/" name="cart.php">
 		<operation>
 			<search position="after"><![CDATA[$this->cart->remove(]]></search>
