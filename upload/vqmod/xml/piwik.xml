@@ -1,0 +1,110 @@
+<modification>
+	<id>Matomo OpenCart mod for OC 3.x</id>
+    <name>Matomo OpenCart mod for OC 3.x</name>
+	<version>1.0.1</version>
+	<vqmver>2.6.0</vqmver>
+	<author><![CDATA[<span class="label label-primary">Gene Hawkins</span>]]></author>
+	<link>http://www.genesworld.net</link>
+	<file path="catalog/controller/common/" name="footer.php">
+		<operation>
+			<search position="before"><![CDATA[$data['powered']]]></search>
+			<add><![CDATA[
+		// BOF - Matomo Opencart mod
+		$this->load->model('tool/piwik');
+		$data['piwik_footer_text'] = $this->model_tool_piwik->getFooterText();
+		// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/view/theme/*/template/common/" name="footer.twig">
+		<operation>
+			<search position="before"><![CDATA[</body>]]></search>
+			<add><![CDATA[
+			{{ piwik_footer_text }}
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/extension/quickcheckout/" name="cart.php">
+		<operation>
+			<search position="after"><![CDATA[$this->cart->remove(]]></search>
+			<add><![CDATA[
+			// BOF - Matomo Opencart mod
+			$this->load->model('tool/piwik');
+			$this->model_tool_piwik->trackEcommerceCartUpdate();
+			// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$this->cart->update(]]></search>
+			<add><![CDATA[
+			// BOF - Matomo Opencart mod
+			$this->load->model('tool/piwik');
+			$this->model_tool_piwik->trackEcommerceCartUpdate();
+			// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/checkout/" name="cart.php">
+		<operation>
+			<search position="after"><![CDATA[$this->cart->remove(]]></search>
+			<add><![CDATA[
+			// BOF - Matomo Opencart mod
+			$this->load->model('tool/piwik');
+			$this->model_tool_piwik->trackEcommerceCartUpdate();
+			// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$this->cart->update(]]></search>
+			<add><![CDATA[
+			// BOF - Matomo Opencart mod
+			$this->load->model('tool/piwik');
+			$this->model_tool_piwik->trackEcommerceCartUpdate();
+			// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$this->cart->add(]]></search>
+			<add><![CDATA[
+				// BOF - Matomo Opencart mod
+				$this->load->model('tool/piwik');
+				$this->model_tool_piwik->trackEcommerceCartUpdate();
+				// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/checkout/" name="success.php">
+		<operation>
+			<search position="after"><![CDATA[function index() {]]></search>
+			<add><![CDATA[
+		// BOF - Matomo Opencart mod
+		if ( isset($this->session->data['order_id']) and ( ! empty($this->session->data['order_id']))  ) {
+			$this->session->data['last_order_id'] = $this->session->data['order_id'];
+			
+			$this->load->model('tool/piwik');
+			$this->model_tool_piwik->trackEcommerceOrder($this->session->data['last_order_id']);
+		}
+		// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/product/" name="search.php">
+		<operation>
+			<search position="before"><![CDATA[$this->response->setOutput(]]></search>
+			<add><![CDATA[
+		// BOF - Matomo Opencart mod
+		$this->load->model('tool/piwik');
+		if ( isset($product_total) ) {
+			$this->session->data['last_search_total'] = $product_total;
+			
+			if ( isset($filter_name) and isset($filter_category_id) ) {
+				$this->model_tool_piwik->trackSiteSearch($filter_name, $filter_category_id, $product_total);
+			}
+		}
+		// EOF - Matomo Opencart mod
+			]]></add>
+		</operation>
+	</file>	
+</modification>
+
+
