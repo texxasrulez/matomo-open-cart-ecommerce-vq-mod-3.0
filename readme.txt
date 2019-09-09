@@ -96,6 +96,11 @@ This is the first release for OC2.x and would benefit from further feedback. Ple
 
 VERSION HISTORY
 ---------------
+v1.0.1
+Initial Commit for updated version supporting OpenCart 3.
+
+VERSION HISTORY (Prior Maintainer)
+---------------
 
 v2.0 - 2015/05/03
 Provide compatibility for OC2.x , no longer supports OC1.x (jump to v2.0)
