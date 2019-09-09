@@ -1,7 +1,7 @@
 ------------------------------------------------------
 Texxasrulez Matomo OpenCart Ecommerce VQmod
 ------------------------------------------------------
-Source Repository:	https://github.com/texxasrulez/Matomo-OpenCart-Ecommerce-VQMod
+Source Repository:	https://github.com/texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0
 Original Author:	Gene Hawkins
 Version:			1.0.1
 Release Date:		2019-09-09
