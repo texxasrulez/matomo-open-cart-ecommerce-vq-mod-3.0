@@ -1,8 +1,8 @@
 ------------------------------------------------------
-Texxasrulez Matomo OpenCart Ecommerce VQmod
+Texxasrulez Matomo OpenCart Ecommerce VQmod Plugin / Extension
 ------------------------------------------------------
 Source Repository:	https://github.com/texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0
-Original Author:	Gene Hawkins
+Author:	Gene Hawkins
 Version:			1.0.1
 Release Date:		2019-09-09
 License:			GNU General Public License (GPL) version 3
@@ -22,7 +22,7 @@ License:			GNU General Public License (GPL) version 3
 
 DESCRIPTION
 -----------
-Implements Piwik Ecommerce tracking for OpenCart;
+Implements Piwik Ecommerce tracking plugin / extension for OpenCart;
 > Tracks regular page views
 > Tracks Ecommerce product views (category views not yet implemented)
 > Tracks Ecommerce cart add/update/delete
