@@ -1,0 +1,14 @@
+{
+    "name": "texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0",
+    "description": "Track e-commerce stats from OpenCart to Matomo.",
+    "homepage": "https://github.com/texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0",
+    "license": "GPL-3.0-only",
+    "version": "3.3",
+    "authors": [
+        {
+            "name": "Gene Hawkins",
+            "email": "texxasrulez@yahoo.com",
+            "role": "Lead"
+        }
+    ]
+}
