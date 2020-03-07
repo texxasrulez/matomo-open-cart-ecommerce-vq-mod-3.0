@@ -1,7 +1,7 @@
 {
-    "name": "texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0",
+    "name": "texxasrulez/matomo-open-cart-ecommerce-vq-mod-3.0",
     "description": "Track e-commerce stats from OpenCart to Matomo.",
-    "homepage": "https://github.com/texxasrulez/Matomo-OpenCart-Ecommerce-VQMod-3.0",
+    "homepage": "https://github.com/texxasrulez/matomo-open-cart-ecommerce-vq-mod-3.0",
     "license": "GPL-3.0-only",
     "version": "3.3",
     "authors": [
